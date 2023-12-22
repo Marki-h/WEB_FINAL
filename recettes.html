@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Répertoire de recettes communautaires</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-utilities.rtl.css">
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.esm.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="recettes.js" defer></script>
+    <link rel="stylesheet" href="recettes.css">
+</head>
+<body class="container row">
+    <h5 class="titre">Répertoire de recettes communautaires</h5>
+    <form id="form" class="col-6 ms-5 container" onsubmit="event.preventDefault()">
+        <!-- Titre -->
+        <h5 class="ms-2 mb-3 display-5">Ajouter une recette</h5>
+        <!-- Ajouter une recette -->
+        <div class="mb-3">
+            <label for="nom" class="form-label col-4 mb-3 row">Nom de la recette :</label>
+            <input type="text" class="form-control col-lg-9 mb-3 row" id="nom" name="nom" required minlength="2" maxlength="25" pattern="[A-z\- ]+" title="Veuillez utiliser que des lettres, tirets et espaces!">
+        </div>
+
+        <!-- Les ingrédients -->
+        <div class="mb-3">
+            <label for="ingredient1" class="form-label col-4 mb-3 row">Ingrédients :</label>
+            <section class="mb-3 row"><!-- ingrédient 1 -->
+                <input type="text" class="form-control col-lg-4" id="ingredient1" required minlength="2" maxlength="25" pattern="[A-z]+" placeholder="Ingrédient 1" title="Que des lettres tirets et espaces!">
+                <input type="text" class="form-control col-lg-4 ms-4" id="quantite1" required placeholder="Quantité 1">
+            </section>
+            <section class="mb-3 row"><!-- ingrédient 2 -->
+                <input type="text" class="form-control col-lg-4" id="ingredient2" required minlength="2" maxlength="25" pattern="[A-z]+" placeholder="Ingrédient 2">
+                <input type="text" class="form-control col-lg-4 ms-4" id="quantite2" required placeholder="Quantité 2">
+            </section>
+            <section class="mb-3 row"><!-- ingrédient 3 -->
+                <input type="text" class="form-control col-lg-4" id="ingredient3" required minlength="2" maxlength="25" pattern="[A-z]+" placeholder="Ingrédient 3">
+                <input type="text" class="form-control col-lg-4 ms-4" id="quantite3" required placeholder="Quantité 3">
+            </section>
+            <section class="mb-3 row"><!-- ingrédient 4 -->
+                <input type="text" class="form-control col-lg-4" id="ingredient4" required minlength="2" maxlength="25" pattern="[A-z]+" placeholder="Ingrédient 4">
+                <input type="text" class="form-control col-lg-4 ms-4" id="quantite4" required placeholder="Quantité 4">
+            </section>
+            <section class="mb-3 row"><!-- ingrédient 5 -->
+                <input type="text" class="form-control col-lg-4" id="ingredient5" required minlength="2" maxlength="25" pattern="[A-z]+" placeholder="Ingrédient 5">
+                <input type="text" class="form-control col-lg-4 ms-4" id="quantite5" required placeholder="Quantité 5">
+            </section>
+        </div>
+        <!-- Instructions de cuisson -->
+        <div>
+            <label class="form-label col-4 mb-3 row" for="instructions">Instructions :</label>
+            <textarea type="text" class="form-control col-lg-9 mb-5 row" id="instructions" required minlength="10" maxlength="1000" title="Maximum de mille carachtères!"></textarea>
+        </div>
+
+        <!-- Bouton ajouter -->
+        <div class="mb-3 row">
+            <input type="submit" value="Ajouter la recette" class="btn btn-primary col-lg-4" id="submit">
+        </div>
+    </form>
+
+    <!-- Affichage les recettes -->
+    <section id="recettes" class="col-5">
+        <h5 class="display-5 mb-5">Recettes :</h5>
+        <!-- Liste des recettes ajoutés -->
+        <ul id="list_recettes" class="list-unstyled">
+        </ul>
+    </section>
+</body>
+</html>
